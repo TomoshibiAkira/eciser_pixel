@@ -100,7 +100,9 @@ void MainWindow::saveFile()
 
     QString savepath = QFileDialog::getSaveFileName(this, QString("Save"), workingFile,
                                                     QString("Images (*.png *.bmp *.jpg)"));
-    if (r->getRastered().save(savepath))
+    if (savepath.isEmpty()) return;
+
+    if (!r->getRastered().save(savepath))
     {
         QMessageBox::critical(this, QString("Error"), QString("Can't save to this file!"));
         return;

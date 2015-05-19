@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = eciser_pixel
 TEMPLATE = app
 
-LIBS += -L../ann/lib -lANN
+LIBS += -LD:/PROGRAM/ANN/MS_Win32/dll/Release -lANN
 
 SOURCES += main.cpp\
         mainwindow.cpp \
